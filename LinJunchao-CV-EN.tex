@@ -1,0 +1,328 @@
+\documentclass[fontsize=11pt]{scrartcl} % KOMA-article class
+% modified from Wenlong Zhang's template
+% https://www.overleaf.com/articles/chinese-cv-for-application-of-science-position/sgrrmhrdvfxk
+\usepackage[english]{babel}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\setromanfont{Times New Roman}
+\setsansfont{Arial}
+% \usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+\usepackage[maxnames=10,style=phys]{biblatex}
+\addbibresource{JingwenXu-Pub-textbf.bib}
+\AtEveryCitekey{%
+  \clearfield{note}%
+}
+
+\def\makenamesetup{%
+  \def\bibnamedelima{~}%
+  \def\bibnamedelimb{ }%
+  \def\bibnamedelimc{ }%
+  \def\bibnamedelimd{ }%
+  \def\bibnamedelimi{ }%
+  \def\bibinitperiod{.}%
+  \def\bibinitdelim{~}%
+  \def\bibinithyphendelim{.-}}    
+\newcommand*{\makename}[2]{\begingroup\makenamesetup\xdef#1{#2}\endgroup}
+
+\newcommand*{\boldname}[3]{%
+  \def\lastname{#1}%
+  \def\firstname{#2}%
+  \def\firstinit{#3}}
+\boldname{}{}{}
+
+% Patch new definitions
+\renewcommand{\mkbibnamegiven}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\renewcommand{\mkbibnamefamily}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+
+
+%This Part is for bold names in \fullcite
+\makeatletter
+% auxiliary bibfile
+\def\hlblx@bibfile@name{\jobname -boldnames.bib}
+\newwrite\hlblx@bibfile
+\immediate\openout\hlblx@bibfile=\hlblx@bibfile@name
+
+\newcounter{hlblx@name}
+\setcounter{hlblx@name}{0}
+
+\newcommand*{\hlblx@writenametobib}[1]{%
+  \stepcounter{hlblx@name}%
+  \edef\hlblx@tmp@nocite{%
+    \noexpand\AfterPreamble{%
+      \noexpand\setbox0\noexpand\vbox{%
+        \noexpand\hlblx@getmethehash{hlblx@name@\the\value{hlblx@name}}}}%
+  }%
+  \hlblx@tmp@nocite
+  \immediate\write\hlblx@bibfile{%
+    @misc{hlblx@name@\the\value{hlblx@name}, author = {\unexpanded{#1}}, %
+          options = {dataonly=true},}%
+  }%
+}
+
+\AtEndDocument{%
+  \closeout\hlblx@bibfile}
+
+\addbibresource{\hlblx@bibfile@name}
+
+\newcommand*{\hlbxl@boldhashes}{}
+\DeclareNameFormat{hlblx@hashextract}{%
+  \xifinlist{\thefield{hash}}{\hlbxl@boldhashes}
+    {}
+    {\listxadd{\hlbxl@boldhashes}{\thefield{fullhash}}}}
+
+\DeclareCiteCommand{\hlblx@getmethehash}
+  {}
+  {\printnames[hlblx@hashextract][1-999]{author}}
+  {}
+  {}
+
+% user-level macros
+\newcommand*{\addboldnames}{\forcsvlist\hlblx@writenametobib}
+\newcommand*{\resetboldnames}{\def\hlbxl@boldhashes{}}
+
+
+\newcommand*{\mkboldifhashinlist}[1]{%
+  \xifinlist{\thefield{hash}}{\hlbxl@boldhashes}
+    {\mkbibbold{#1}}
+    {#1}}
+\makeatother
+
+\DeclareNameWrapperFormat{given-family:hash:bold}{%
+  \renewcommand*{\mkbibcompletename}{\mkboldifhashinlist}%
+  #1}
+
+\DeclareCiteCommand{\printpublication}
+  {\usebibmacro{prenote}}
+  {\usedriver
+     {\DeclareNameAlias{sortname}{default}%
+      \DeclareNameWrapperAlias{default}{given-family:hash:bold}%
+      \defcounter{maxnames}{9}%
+      \defcounter{minnames}{9}
+      \clearfield{note}}
+     {\thefield{entrytype}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\addboldnames{{Jingwen, Xu}}  
+
+\usepackage{enumitem}
+\usepackage{csquotes}
+	%\textheight=700px                    % Saving trees ;-)
+%\usepackage{url}
+% \usepackage{bibentry}
+
+% \makeatletter\let\saved@bibitem\@bibitem\makeatother
+
+\usepackage{xstring}
+
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
+\makeatletter\let\@bibitem\saved@bibitem\makeatother
+\usepackage{float}
+\usepackage{etaremune}
+\usepackage{wrapfig}
+\usepackage{xeCJK}
+%\usepackage{attachfile}
+%\usepackage{bibentry}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%\addtolength{\voffset}{-40pt}
+%\addtolength{\textheight}{20pt}
+
+\setlength\topmargin{0pt}
+\addtolength\topmargin{-\headheight}
+\addtolength\topmargin{-\headsep}
+\setlength\oddsidemargin{0pt}
+\setlength\textwidth{\paperwidth}
+\addtolength\textwidth{-2in}
+\setlength\textheight{\paperheight}
+%\addtolength\textheight{-3in}
+\addtolength\textheight{-2in}
+\usepackage{layout}
+
+%%% Custom sectioning}{sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+% \newcommand{\makeauthorsbold}[1]{%
+% \DeclareNameFormat{author}{%
+%   \ifnumequal{\value{listcount}}{1}
+%     {\ifnumequal{\value{liststop}}{1}
+%       {\expandafter\IfSubStr{#1}{##1}{\textbf{##1\addcomma\addspace ##4\addcomma\isdot}}{##1\addcomma\addspace ##4\addcomma\isdot}}
+%       {\expandafter\IfSubStr{#1}{##1}{\textbf{##1\addcomma\addspace ##4}}{##1\addcomma\addspace ##4}}}
+%     {\ifnumless{\value{listcount}}{\value{liststop}}
+%       {\expandafter\IfSubStr{#1}{##1}{\textbf{\addcomma\addspace ##1\addcomma\addspace ##4}}{\addcomma\addspace ##1\addcomma\addspace ##4}}
+%           {\expandafter\IfSubStr{#1}{##1}{\textbf{\addcomma\addspace ##1\addcomma\addspace ##4\addcomma\isdot}}{\addcomma\addspace ##1\addcomma\addspace ##4\addcomma\isdot}}%
+%     }%
+% }%
+% }
+
+
+\newcommand{\MyName}[1]{ % Name
+\centering{\Huge #1}}
+% 		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+% 		\par \normalsize \normalfont
+		
+\newcommand{\MySlogan}[1]{ % Slogan}{optional)
+\centering{#1}}
+
+\newcommand{\NewPart}[2]{\section*{\uppercase{#1} #2}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent 
+		\flushleft
+		%\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name}{birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+% 		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\noindent 
+		\flushleft
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name}{birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{White}{\color{Black}#2} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent #4 \par}
+% 		\noindent #4 \hangindent=2em\hangafter=0 \small  % Description
+		
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{White}{\color{Black}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+% \newcommand{\PaperEntry}[7]{
+% 		\noindent #1, ``\href{#7}{#2}", \textit{#3} \textbf{#4}, #5 (#6).}
+
+% \newcommand{\ArxivEntry}[3]{
+% 		\noindent #1, ``\href{http://arxiv.org/abs/#3}{#2}", \textit{{cond-mat/}#3}.}
+        
+% \newcommand{\BookEntry}[4]{
+% 		\noindent #1, ``\href{#3}{#4}", \textit{#3}.}
+        
+% \newcommand{\FundingEntry}[5]{
+%         \noindent #1, ``#2", \$#3 (#4, #5).}
+
+\newcommand{\FundingEntry}[4]{
+        \noindent #1, ``#2", #3, #4.}
+
+\newcommand{\TalkEntry}[4]{
+		\noindent #1, #2, #3 #4}
+
+\newcommand{\ThesisEntry}[5]{
+		\noindent #1 -- #2 #3 ``#4" \textit{#5}}
+
+\newcommand{\CourseEntry}[3]{
+		\noindent \item{#1: \textbf{#2} \\ #3}}
+% \AtBeginDocument{%
+%     \begin{CJK}{UTF8}{gkai}}
+%     \AtEndDocument{%
+%     \end{CJK}}
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+%\bibliographystyle{iop-num}
+% \nobibliography{test}
+% \bibliographystyle{unsrt}
+
+%\layout
+
+% you can upload a photo and include it here...
+% \begin{wrapfigure}{l}{0.5\textwidth}
+% 	\vspace*{-2em}
+% 		\includegraphics[angle=270,width=0.15\textwidth]{wenlong.jpg}
+% \end{wrapfigure}
+
+\MyName{\textbf{\textsf{Junchao Lin}}}
+\\
+\MySlogan{Curriculum Vitae}
+
+\sepspace
+
+\NewPart{Personal Information}{}
+
+\PersonalEntry{Email}{\href{mailto:linjunchao@example.com}{linjunchao@example.com}}
+\PersonalEntry{Phone}{(+86) 123-456-7890}
+\PersonalEntry{Address}{Some Street, Some District, Wuhan, Hubei, China}
+\PersonalEntry{Website}{\href{https://github.com/landrarwolf}{GitHub: landrarwolf}}
+
+\NewPart{Education}{}
+\sepspace
+
+\EducationEntry{Bachelor's Degree}{2015-2019}{Some University}{Computer Science and Technology}{
+    \begin{itemize}
+        \item Major Courses: Data Structures, Algorithms, Operating Systems, Database Systems
+        \item GPA: 3.4/4.0
+        \item Ranking: Top 20\%
+    \end{itemize}
+}
+
+\NewPart{Work Experience}{}
+\sepspace
+
+\WorkEntry{Software Engineer}{2019-2021}{Some Tech Company}{
+    \begin{itemize}
+        \item Developed and maintained internal systems
+        \item Participated in project requirement analysis and design
+        \item Optimized system performance and enhanced user experience
+    \end{itemize}
+}
+
+\NewPart{Skills}{}
+\sepspace
+
+\SkillsEntry{Programming}{Java, Python, JavaScript}
+\SkillsEntry{Frameworks}{Spring, Django, React}
+\SkillsEntry{Databases}{MySQL, MongoDB}
+\SkillsEntry{Languages}{Chinese (Native), English (Proficient)}
+
+\NewPart{Projects}{}
+\sepspace
+
+\WorkEntry{Some Project}{2020-2021}{Project Lead}{
+    \begin{itemize}
+        \item Led frontend development
+        \item Designed backend APIs
+        \item Implemented core business features
+    \end{itemize}
+}
+
+\NewPart{Interests}{}
+\begin{itemize}
+    \item Programming
+    \item Reading
+    \item Traveling
+\end{itemize}
+
+\end{document}
