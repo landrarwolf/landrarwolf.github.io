@@ -4,83 +4,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lin Junchao's Personal Website</title>
+    <title>Junchao Lin - Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-        }
-
-        h1, h2 {
+            line-height: 1.6;
             color: #333;
         }
 
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
         a {
-            color: #007BFF;
+            color: #0366d6;
+            text-decoration: none;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        a:hover {
+            text-decoration: underline;
         }
 
-        li {
-            margin-bottom: 10px;
+        .nav {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            font-size: 24px;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #0366d6;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stats-card {
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .github-stats {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
         }
     </style>
 </head>
 
 <body>
-    <h1>Welcome to Lin Junchao's Personal Website!</h1>
+    <div class="nav">
+        <a href="index_zh.html">中文</a>
+    </div>
 
-    <h2>About Me</h2>
-    <p>I am a PhD student specializing in machine learning and artificial intelligence. My research interests include natural language processing and computer vision.</p>
+    <div class="header">
+        <h1>Junchao Lin</h1>
+        <p>Computer Science Student | Software Developer</p>
+    </div>
 
-    <h2>Research Interests</h2>
-    <ul>
-        <li>Natural Language Processing</li>
-        <li>Computer Vision</li>
-        <li>Deep Learning</li>
-    </ul>
+    <div class="section"></div>
+        <h2>About Me</h2>
+        <p>I am a computer science student passionate about software development and machine learning.
+            Currently focused on web development and algorithm optimization.</p>
+    </div>
 
-    <h2>Publications</h2>
-    <ul>
-        <li><strong>Deep Learning for Text Classification</strong> - Journal/Conference: XXX<br>Abstract: Add abstract here.</li>
-        <li><strong>Application of Convolutional Neural Networks in Image Recognition</strong> - Journal/Conference: XXX<br>Abstract: Add abstract here.</li>
-    </ul>
+    <div class="section">
+        <h2>Education</h2>
+        <p><strong>Bachelor's Degree in Computer Science</strong><br>
+            Some University, 2015-2019<br>
+            GPA: 3.4/4.0</p>
+    </div>
 
-    <h2>Projects</h2>
-    <ul>
-        <li><strong>Intelligent Chatbot</strong> - Description: Developed an intelligent chatbot based on natural language processing, capable of multi-turn conversations.</li>
-        <li><strong>Image Classification System</strong> - Description: Designed and implemented an efficient image classification system with an accuracy of over 95%.</li>
-    </ul>
+    <div class="section">
+        <h2>Skills</h2>
+        <ul></ul>
+            <li><strong>Programming:</strong> Java, Python, JavaScript</li>
+            <li><strong>Frameworks:</strong> Spring, Django, React</li>
+            <li><strong>Databases:</strong> MySQL, MongoDB</li>
+            <li><strong>Languages:</strong> Chinese (Native), English (Proficient)</li>
+        </ul>
+    </div>
 
-    <h2>GitHub</h2>
-    <ul>
-        <li><a href="https://github.com/linjunchao">GitHub Profile</a> - 100 stars</li>
-    </ul>
+    <div class="section">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <h3>Project 1</h3>
+                <p>A brief description of project 1 and its key features.</p>
+                <a href="#">Learn more →</a>
+            </div>
+            <div class="project-card">
+                <h3>Project 2</h3>
+                <p>A brief description of project 2 and its key features.</p>
+                <a href="#">Learn more →</a>
+            </div>
+        </div>
+    </div>
 
-    <h2>Education</h2>
-    <ul>
-        <li>PhD in Computer Science, XYZ University (2020 - Present) - Advisor: Prof. ABC</li>
-        <li>Master's in Computer Science, XYZ University (2018 - 2020) - Advisor: Prof. DEF</li>
-    </ul>
+    <div class="section">
+        <h2>Statistics</h2>
+        <div class="stats-container">
+            <div class="stats-card">
+                <h3>GitHub Activity</h3>
+                <img src="https://github-readme-stats.vercel.app/api?username=landrarwolf&show_icons=true&theme=default" alt="GitHub Stats" width="100%">
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=landrarwolf&layout=compact" alt="Top Languages" width="100%">
+                <canvas id="githubChart"></canvas>
+            </div>
+            <div class="stats-card">
+                <h3>Research Impact</h3>
+                <canvas id="citationsChart"></canvas>
+            </div>
+        </div>
+    </div>
 
-    <h2>Contact</h2>
-    <ul>
-        <li>Email: linjunchao@example.com</li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/linjunchao">LinkedIn</a></li>
-        <li>Twitter: <a href="https://twitter.com/linjunchao">Twitter</a></li>
-    </ul>
+    <div class="section">
+        <h2>Social Media</h2>
+        <div class="social-links">
+            <a href="https://github.com/landrarwolf" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/yourhandle" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://scholar.google.com/citations?user=yourID" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+            <a href="https://space.bilibili.com/yourID" title="Bilibili"><i class="fab fa-bilibili"></i></a>
+            <a href="https://www.zhihu.com/people/yourID" title="知乎"><i class="fab fa-zhihu"></i></a>
+        </div>
+    </div>
 
-    <h2>Resume</h2>
-    <p><a href="resume.pdf">Download my resume</a></p>
+    <div class="section">
+        <h2>Contact</h2>
+        <p>
+            <i class="fas fa-envelope"></i> Email: <a href="mailto:linjunchao@example.com">linjunchao@example.com</a><br>
+            <i class="fab fa-github"></i> GitHub: <a href="https://github.com/landrarwolf">landrarwolf</a><br>
+            <i class="fas fa-map-marker-alt"></i> Location: Wuhan, China<br>
+            <i class="fas fa-phone"></i> Phone: (+86) 123-456-7890
+        </p>
+    </div>
 
-    <p>Feel free to contact me. I look forward to sharing my research and experiences with you!</p>
+    <div class="section">
+        <h2>Resume</h2>
+        <p>
+            <a href="LinJunchao-CV-EN.pdf">English Resume</a> |
+            <a href="LinJunchao-CV-CH.pdf">中文简历</a>
+        </p>
+    </div>
 
-    <p><a href="index_zh.html">中文</a></p>
+    <script>
+        // GitHub 贡献趋势图
+        const githubCtx = document.getElementById('githubChart').getContext('2d');
+        new Chart(githubCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Contributions',
+                    data: [30, 45, 25, 60, 35, 50],
+                    borderColor: '#2ea44f',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Monthly Contributions'
+                    }
+                }
+            }
+        });
+
+        // Google Scholar 引用趋势图
+        const citationsCtx = document.getElementById('citationsChart').getContext('2d');
+        new Chart(citationsCtx, {
+            type: 'line',
+            data: {
+                labels: ['2019', '2020', '2021', '2022', '2023'],
+                datasets: [{
+                    label: 'Citations',
+                    data: [5, 12, 25, 40, 65],
+                    borderColor: '#4285f4',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Citation History'
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
