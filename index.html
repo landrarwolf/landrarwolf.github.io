@@ -88,16 +88,16 @@
           <div>
             <h3>Consistency Deep Equilibrium Models</h3>
             <p class="authors"><strong>Junchao Lin</strong>, Zenan Ling, Jingwen Xu, Robert C. Qiu</p>
-            <p>将深度平衡模型的迭代求解轨迹蒸馏为可控的少步推理过程，在文本、视觉与图任务上实现 2–6.1× 推理加速。</p>
+            <p>针对深度平衡模型依赖固定点迭代、推理延迟较高的问题，提出 C-DEQ：将 DEQ 求解过程刻画为沿固定 ODE 轨迹向平衡点演化，并通过一致性蒸馏学习从中间状态直接映射到固定点。模型既支持少步快速推理，也可继续多步迭代以灵活权衡计算开销与预测性能；在图学习、图像分类和语言建模任务上，相同少步预算下显著优于传统隐式 DEQ。</p>
             <p class="paper-links"><a href="https://arxiv.org/abs/2602.03024" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://openreview.net/forum?id=uw63l3T9un" target="_blank" rel="noopener noreferrer">OpenReview</a><a href="https://github.com/landrarwolf/CDEQ" target="_blank" rel="noopener noreferrer">Code</a></p>
           </div>
         </li>
         <li class="publication">
-          <div class="publication-meta"><strong>2026</strong><span>IEEE TPAMI · 已录用</span></div>
+          <div class="publication-meta"><strong>2024–2026</strong><span>IEEE TPAMI · 已录用</span></div>
           <div>
             <h3>IGNN-Solver: A Graph Neural Solver for Implicit Graph Neural Networks</h3>
             <p class="authors"><strong>Junchao Lin</strong>, Zenan Ling, Zhanbo Feng, Jingwen Xu, Minxuan Liao, Feng Zhou, Tianqi Hou, Zhenyu Liao, Robert C. Qiu</p>
-            <p>设计可学习、图结构感知的固定点求解器，在保持隐式模型适定性的同时预测迭代更新，实现约 1.5–8× 推理加速。</p>
+            <p>针对隐式图神经网络固定点迭代次数多、推理缓慢且难以扩展到大图的问题，提出 IGNN-Solver。可学习初始化器首先预测更优的迭代起点，随后以小型图神经网络参数化广义 Anderson 加速过程，将固定点更新建模为依赖图结构的时序过程，以较低成本预测后续状态。实验在基本保持精度的同时实现约 1.5–8× 推理加速，且图规模越大，加速优势越明显。</p>
             <p class="paper-links"><a href="https://arxiv.org/abs/2410.08524" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://github.com/landrarwolf/IGNN-Solver" target="_blank" rel="noopener noreferrer">Code</a></p>
           </div>
         </li>
@@ -106,7 +106,7 @@
           <div>
             <h3>Semantic Graph Neural Network with Multi-measure Learning for Semi-supervised Classification</h3>
             <p class="authors"><strong>Junchao Lin</strong>, Yuan Wan, Jingwen Xu, Xingchen Qi</p>
-            <p>将多度量关系学习与图神经网络结合，自适应学习更有判别力的语义图，用于半监督分类。</p>
+            <p>针对原始图可能存在噪声、缺失和结构信息不足的问题，提出多度量学习语义图神经网络 ML-SGNN。该方法结合图结构上下文与节点表示构建语义图，以捕获全局结构和复杂语义关系；再通过多度量注意力自适应融合由不同相似性度量产生的特征子图，降低单一预定义度量的偏差。模型联合利用原始拓扑、语义图和特征图，在六个真实图数据集上的实验与消融研究验证了各模块的有效性。</p>
             <p class="paper-links"><a href="https://doi.org/10.1016/j.engappai.2024.109647" target="_blank" rel="noopener noreferrer">DOI</a></p>
           </div>
         </li>
@@ -115,7 +115,7 @@
           <div>
             <h3>Long-tailed Graph Neural Networks via Graph Structure Learning for Node Classification</h3>
             <p class="authors"><strong>Junchao Lin</strong>, Yuan Wan, Jingwen Xu, Xingchen Qi</p>
-            <p>从图结构层面缓解长尾节点分类中的传播偏置，为少数类节点学习更有效的邻域关系。</p>
+            <p>针对低度尾部节点连接不足，以及原始图结构易受噪声、缺失或扰动影响的问题，提出长尾节点分类框架 LTSL-GNN。框架联合学习图结构和尾部节点表示增强参数，利用信息丰富的头部节点及多度量关系优化连接，并在学习到的结构上进一步增强尾部表示；迭代优化使结构学习与节点分类相互促进。在六个真实数据集上，该方法优于多种先进基线，并在图结构受扰动时表现出更好的性能与鲁棒性。</p>
             <p class="paper-links"><a href="https://doi.org/10.1007/s10489-023-04534-3" target="_blank" rel="noopener noreferrer">DOI</a></p>
           </div>
         </li>
@@ -124,7 +124,7 @@
           <div>
             <h3>基于图结构优化的自适应多度量非监督特征选择方法</h3>
             <p class="authors"><strong>林筠超</strong>，万源</p>
-            <p>在无标签条件下联合学习多度量权重、图结构与特征重要性，是从优化视角开展图结构学习的早期工作。</p>
+            <p>针对非监督特征选择中多种相似性度量难以统一、近邻图又难以形成理想连通结构的问题，提出 SAM-SGO。该方法将相似度矩阵设为待学习变量，自适应融合多种度量，并以秩约束优化图结构；同时把图降维、多度量学习与稀疏 L2,0 投影统一到同一目标函数中。在多个标准数据集上，相较 LLCFS、DGUFS 和 SOGFS，聚类正确率平均提高约 3.6 个百分点。</p>
             <p class="paper-links"><a href="https://doi.org/10.11772/j.issn.1001-9081.2020071099" target="_blank" rel="noopener noreferrer">DOI</a></p>
           </div>
         </li>

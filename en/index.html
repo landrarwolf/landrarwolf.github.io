@@ -88,16 +88,16 @@
           <div>
             <h3>Consistency Deep Equilibrium Models</h3>
             <p class="authors"><strong>Junchao Lin</strong>, Zenan Ling, Jingwen Xu, Robert C. Qiu</p>
-            <p>Distills iterative solution trajectories of deep equilibrium models into controllable few-step inference, delivering 2–6.1× speedups across language, vision, and graph tasks.</p>
+            <p>C-DEQ addresses the high inference latency caused by fixed-point iterations in deep equilibrium models. It interprets DEQ solving as evolution toward equilibrium along a fixed ODE trajectory, then uses consistency distillation to learn direct mappings from intermediate states to the fixed point. The model supports both fast few-step inference and additional iterations for a flexible cost-performance trade-off; under the same few-step budget, it substantially improves over conventional implicit DEQs on graph learning, image classification, and language modeling tasks.</p>
             <p class="paper-links"><a href="https://arxiv.org/abs/2602.03024" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://openreview.net/forum?id=uw63l3T9un" target="_blank" rel="noopener noreferrer">OpenReview</a><a href="https://github.com/landrarwolf/CDEQ" target="_blank" rel="noopener noreferrer">Code</a></p>
           </div>
         </li>
         <li class="publication">
-          <div class="publication-meta"><strong>2026</strong><span>IEEE TPAMI · Accepted</span></div>
+          <div class="publication-meta"><strong>2024–2026</strong><span>IEEE TPAMI · Accepted</span></div>
           <div>
             <h3>IGNN-Solver: A Graph Neural Solver for Implicit Graph Neural Networks</h3>
             <p class="authors"><strong>Junchao Lin</strong>, Zenan Ling, Zhanbo Feng, Jingwen Xu, Minxuan Liao, Feng Zhou, Tianqi Hou, Zhenyu Liao, Robert C. Qiu</p>
-            <p>Introduces a learnable, graph-aware fixed-point solver that predicts iterative updates while preserving model well-posedness, achieving roughly 1.5–8× faster inference.</p>
+            <p>IGNN-Solver targets the slow, iteration-heavy inference of implicit graph neural networks and their difficulty scaling to large graphs. A learnable initializer first predicts a better starting point; a small graph neural network then parameterizes generalized Anderson acceleration, treating fixed-point updates as a graph-dependent temporal process and predicting subsequent states at low cost. Experiments retain comparable accuracy while delivering roughly 1.5–8× faster inference, with larger gains on larger graphs.</p>
             <p class="paper-links"><a href="https://arxiv.org/abs/2410.08524" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://github.com/landrarwolf/IGNN-Solver" target="_blank" rel="noopener noreferrer">Code</a></p>
           </div>
         </li>
@@ -106,7 +106,7 @@
           <div>
             <h3>Semantic Graph Neural Network with Multi-measure Learning for Semi-supervised Classification</h3>
             <p class="authors"><strong>Junchao Lin</strong>, Yuan Wan, Jingwen Xu, Xingchen Qi</p>
-            <p>Combines multi-measure relation learning with graph neural networks to adaptively learn more discriminative semantic graphs for semi-supervised classification.</p>
+            <p>ML-SGNN addresses noisy, incomplete, or structurally insufficient input graphs. It constructs a semantic graph from structural context and node representations to capture global organization and complex semantic relations, then uses multi-measure attention to adaptively combine feature subgraphs built from different similarity metrics, reducing the bias of any single predefined metric. The model jointly exploits the original topology, semantic graph, and feature graphs; experiments and ablations on six real-world datasets validate each component.</p>
             <p class="paper-links"><a href="https://doi.org/10.1016/j.engappai.2024.109647" target="_blank" rel="noopener noreferrer">DOI</a></p>
           </div>
         </li>
@@ -115,7 +115,7 @@
           <div>
             <h3>Long-tailed Graph Neural Networks via Graph Structure Learning for Node Classification</h3>
             <p class="authors"><strong>Junchao Lin</strong>, Yuan Wan, Jingwen Xu, Xingchen Qi</p>
-            <p>Addresses propagation bias in long-tailed node classification by learning more effective neighborhood structures for minority-class nodes.</p>
+            <p>LTSL-GNN addresses sparsely connected tail nodes and original graph structures affected by noise, missing edges, or perturbations. It jointly learns graph structure and tail-node representation enhancement parameters, using informative head nodes and multi-measure relations to optimize connectivity before strengthening tail-node features on the learned graph. Its iterative procedure lets structure learning and node classification reinforce each other; experiments on six real-world datasets outperform strong baselines, especially under graph perturbations.</p>
             <p class="paper-links"><a href="https://doi.org/10.1007/s10489-023-04534-3" target="_blank" rel="noopener noreferrer">DOI</a></p>
           </div>
         </li>
@@ -124,7 +124,7 @@
           <div>
             <h3>Adaptive Multi-measure Unsupervised Feature Selection Based on Graph Structure Optimization</h3>
             <p class="authors"><strong>Junchao Lin</strong>, Yuan Wan</p>
-            <p>Jointly learns multi-measure weights, graph structure, and feature importance without labels, representing early work on graph structure learning from an optimization perspective.</p>
+            <p>SAM-SGO tackles two limitations in unsupervised feature selection: incompatible similarity metrics and nearest-neighbor graphs that may not form an ideal connected structure. It treats the similarity matrix as a learnable variable, adaptively combines multiple metrics, and imposes a rank constraint to optimize graph structure, while unifying graph dimensionality reduction, multi-measure learning, and sparse L2,0 projection in one objective. Across benchmark datasets, it improves clustering accuracy by about 3.6 percentage points on average over LLCFS, DGUFS, and SOGFS.</p>
             <p class="paper-links"><a href="https://doi.org/10.11772/j.issn.1001-9081.2020071099" target="_blank" rel="noopener noreferrer">DOI</a></p>
           </div>
         </li>
