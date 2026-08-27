@@ -1,40 +1,8 @@
-# linjunchao.github.io
-个人主页
+# Junchao Lin · Academic Homepage
 
-## 个人简历
+Bilingual academic homepage for Junchao Lin, covering efficient inference, implicit neural networks, graph learning, publications, education, and selected honors.
 
-### 基本信息
-- 姓名: 林俊超
-- 邮箱: linjunchao@example.com
-- 电话: 123-456-7890
+- Chinese: <https://landrarwolf.github.io/>
+- English: <https://landrarwolf.github.io/en/>
 
-### 教育背景
-- **大学名称**: 某某大学
-- **专业**: 计算机科学与技术
-- **学历**: 本科
-- **时间**: 2015 - 2019
-
-### 工作经验
-- **公司名称**: 某某科技公司
-- **职位**: 软件工程师
-- **时间**: 2019 - 2021
-- **职责**:
-  - 负责开发和维护公司内部系统
-  - 参与项目需求分析和设计
-
-### 技能
-- 编程语言: Java, Python, JavaScript
-- 框架: Spring, Django, React
-- 数据库: MySQL, MongoDB
-
-### 项目经验
-- **项目名称**: 某某项目
-- **描述**: 该项目是一个基于Web的应用程序，旨在提供某种服务
-- **职责**:
-  - 负责前端开发
-  - 参与后端接口设计
-
-### 个人兴趣
-- 编程
-- 阅读
-- 旅行
+The site is dependency-free static HTML/CSS. GitHub Actions publishes only `index.html`, `en/`, and `assets/` to GitHub Pages after each push to `main`; CV source files retained in this repository are not included in the deployed artifact.

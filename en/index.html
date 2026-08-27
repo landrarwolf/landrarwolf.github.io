@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Academic homepage of Junchao Lin: efficient inference, implicit neural networks, and graph learning.">
+  <meta name="keywords" content="Junchao Lin, efficient inference, implicit neural networks, graph learning, deep equilibrium models">
+  <meta name="author" content="Junchao Lin">
+  <link rel="canonical" href="https://landrarwolf.github.io/en/">
+  <link rel="alternate" hreflang="zh-CN" href="https://landrarwolf.github.io/">
+  <link rel="alternate" hreflang="en" href="https://landrarwolf.github.io/en/">
+  <link rel="stylesheet" href="/assets/style.css">
+  <title>Junchao Lin · Academic Homepage</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="wordmark" href="#top">Junchao Lin</a>
+    <div class="header-actions">
+      <nav aria-label="Primary navigation">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
+        <a href="#honors">Honors</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <nav class="language-switch" aria-label="Language switcher">
+        <a href="/" lang="zh-CN">中</a><span aria-hidden="true">/</span><span aria-current="page">En</span>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <h1>Junchao Lin <span>林筠超</span></h1>
+        <p>I am a PhD student at the School of Electronic Information and Communications, Huazhong University of Science and Technology, advised by <a href="https://openreview.net/profile?id=~Robert_C_Qiu1" target="_blank" rel="noopener noreferrer">Prof. Robert Caiming Qiu</a>, IEEE Fellow and Full Professor at the school.</p>
+        <p>My research focuses, in order, on <strong>efficient inference</strong>, <strong>implicit neural networks</strong>, and <strong>graph learning</strong>. I develop consistency distillation, learnable solvers, and structure-aware models for reliable and scalable intelligence at lower iterative cost.</p>
+        <p class="profile-links">
+          <a href="mailto:linjunchao@whut.edu.cn">Email</a>
+          <span aria-hidden="true">/</span>
+          <a href="https://github.com/landrarwolf" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <span aria-hidden="true">/</span>
+          <a href="#publications">Publications</a>
+        </p>
+      </div>
+      <img class="portrait" src="/assets/portrait.jpg" width="592" height="830" alt="Portrait of Junchao Lin">
+    </section>
+
+    <section class="section news" aria-labelledby="news-title">
+      <h2 id="news-title">Recent News</h2>
+      <ul>
+        <li><time datetime="2026">2026</time><span>C-DEQ was accepted at ICML 2026.</span></li>
+        <li><time datetime="2026">2026</time><span>IGNN-Solver was accepted by IEEE TPAMI.</span></li>
+        <li><time datetime="2025">2025</time><span>Semantic GNN was published in <em>Engineering Applications of Artificial Intelligence</em>.</span></li>
+      </ul>
+    </section>
+
+    <section class="section" id="research">
+      <h2>Research</h2>
+      <p class="section-lede">Across numerical solvers, implicit representations, and structured data, I ask one shared question: how can we preserve model capability and stability while making inference faster and modeling more faithful to data structure?</p>
+      <div class="research-list">
+        <article>
+          <h3>Efficient Inference</h3>
+          <p>Reducing iterative inference cost through consistency distillation, solver-trajectory compression, and structure-aware updates, with controllable speed-accuracy trade-offs.</p>
+        </article>
+        <article>
+          <h3>Implicit Neural Networks</h3>
+          <p>Studying fixed-point modeling, well-posedness constraints, and reliable learnable solvers for deep equilibrium models and implicit graph neural networks.</p>
+        </article>
+        <article>
+          <h3>Graph Learning</h3>
+          <p>Exploring semantic graph learning, long-tailed graph learning, and large-scale graph representation through relations, structure, and message passing.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="section-heading">
+        <h2>Selected Publications</h2>
+        <span>First-author works · updated August 2026</span>
+      </div>
+      <ol class="publication-list">
+        <li class="publication">
+          <div class="publication-meta"><strong>2026</strong><span>ICML · Accepted</span></div>
+          <div>
+            <h3>Consistency Deep Equilibrium Models</h3>
+            <p class="authors"><strong>Junchao Lin</strong>, Zenan Ling, Jingwen Xu, Robert C. Qiu</p>
+            <p>Distills iterative solution trajectories of deep equilibrium models into controllable few-step inference, delivering 2–6.1× speedups across language, vision, and graph tasks.</p>
+            <p class="paper-links"><a href="https://arxiv.org/abs/2602.03024" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://openreview.net/forum?id=uw63l3T9un" target="_blank" rel="noopener noreferrer">OpenReview</a><a href="https://github.com/landrarwolf/CDEQ" target="_blank" rel="noopener noreferrer">Code</a></p>
+          </div>
+        </li>
+        <li class="publication">
+          <div class="publication-meta"><strong>2026</strong><span>IEEE TPAMI · Accepted</span></div>
+          <div>
+            <h3>IGNN-Solver: A Graph Neural Solver for Implicit Graph Neural Networks</h3>
+            <p class="authors"><strong>Junchao Lin</strong>, Zenan Ling, Zhanbo Feng, Jingwen Xu, Minxuan Liao, Feng Zhou, Tianqi Hou, Zhenyu Liao, Robert C. Qiu</p>
+            <p>Introduces a learnable, graph-aware fixed-point solver that predicts iterative updates while preserving model well-posedness, achieving roughly 1.5–8× faster inference.</p>
+            <p class="paper-links"><a href="https://arxiv.org/abs/2410.08524" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://github.com/landrarwolf/IGNN-Solver" target="_blank" rel="noopener noreferrer">Code</a></p>
+          </div>
+        </li>
+        <li class="publication">
+          <div class="publication-meta"><strong>2025</strong><span>EAAI · 140:109647</span></div>
+          <div>
+            <h3>Semantic Graph Neural Network with Multi-measure Learning for Semi-supervised Classification</h3>
+            <p class="authors"><strong>Junchao Lin</strong>, Yuan Wan, Jingwen Xu, Xingchen Qi</p>
+            <p>Combines multi-measure relation learning with graph neural networks to adaptively learn more discriminative semantic graphs for semi-supervised classification.</p>
+            <p class="paper-links"><a href="https://doi.org/10.1016/j.engappai.2024.109647" target="_blank" rel="noopener noreferrer">DOI</a></p>
+          </div>
+        </li>
+        <li class="publication">
+          <div class="publication-meta"><strong>2023</strong><span>Applied Intelligence · 53</span></div>
+          <div>
+            <h3>Long-tailed Graph Neural Networks via Graph Structure Learning for Node Classification</h3>
+            <p class="authors"><strong>Junchao Lin</strong>, Yuan Wan, Jingwen Xu, Xingchen Qi</p>
+            <p>Addresses propagation bias in long-tailed node classification by learning more effective neighborhood structures for minority-class nodes.</p>
+            <p class="paper-links"><a href="https://doi.org/10.1007/s10489-023-04534-3" target="_blank" rel="noopener noreferrer">DOI</a></p>
+          </div>
+        </li>
+        <li class="publication">
+          <div class="publication-meta"><strong>2021</strong><span>Journal of Computer Applications · 41(5)</span></div>
+          <div>
+            <h3>Adaptive Multi-measure Unsupervised Feature Selection Based on Graph Structure Optimization</h3>
+            <p class="authors"><strong>Junchao Lin</strong>, Yuan Wan</p>
+            <p>Jointly learns multi-measure weights, graph structure, and feature importance without labels, representing early work on graph structure learning from an optimization perspective.</p>
+            <p class="paper-links"><a href="https://doi.org/10.11772/j.issn.1001-9081.2020071099" target="_blank" rel="noopener noreferrer">DOI</a></p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" id="education">
+      <h2>Education</h2>
+      <div class="entry-list">
+        <article>
+          <time>Sep 2023–Present</time>
+          <div>
+            <h3>Huazhong University of Science and Technology</h3>
+            <p>PhD Student, School of Electronic Information and Communications</p>
+            <p class="muted">Weighted average: 88/100 · Advisor: Prof. Robert Caiming Qiu (IEEE Fellow)</p>
+            <p class="muted">Research topic: Accelerating Inference in Implicit Neural Networks</p>
+          </div>
+        </article>
+        <article>
+          <time>Sep 2020–Jun 2023</time>
+          <div>
+            <h3>Wuhan University of Technology</h3>
+            <p>M.S. in Mathematics · Top 3 in the program</p>
+            <p class="muted">Advisor: Prof. Yuan Wan</p>
+            <p class="muted">Thesis: Graph Neural Network Models Based on Graph Structure Learning and Graph Attention</p>
+          </div>
+        </article>
+        <article>
+          <time>Sep 2016–Jun 2020</time>
+          <div>
+            <h3>Wuhan University of Technology</h3>
+            <p>B.S. in Information and Computing Science (Mathematics Base Program)</p>
+            <p class="muted">Advisor: Prof. Yuan Wan</p>
+            <p class="muted">Thesis: Classification Algorithms for Feature Selection Based on Spectral Analysis</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="honors">
+      <h2>Selected Honors</h2>
+      <div class="compact-list">
+        <p><time>PhD</time><span>First-class Academic Scholarship, HUST</span></p>
+        <p><time>M.S.</time><span>Top 3 in the program; Excellence Scholarship, First-class Academic Scholarship, and Outstanding Graduate Student, WHUT</span></p>
+        <p><time>2020</time><span>National Third Prize, Huawei Cup China Graduate Mathematical Contest in Modeling; Outstanding Graduate, WHUT</span></p>
+        <p><time>2019</time><span>Successful Participant, Mathematical Contest in Modeling (MCM)</span></p>
+        <p><time>2018</time><span>First Prize, Hubei Division, China Undergraduate Mathematical Contest in Modeling</span></p>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <h2>Contact</h2>
+      <p>For discussions on efficient inference, implicit neural networks, graph learning, research collaborations, or opportunities, please feel free to reach out.</p>
+      <a href="mailto:linjunchao@whut.edu.cn">linjunchao@whut.edu.cn</a>
+    </section>
+  </main>
+
+  <footer><span>© 2026 Junchao Lin</span><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>
