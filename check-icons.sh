@@ -7,14 +7,16 @@ email="$user@$domain"
 
 for page in index.html en/index.html; do
   count=$(grep -o '<svg class="link-chip-icon"' "$page" | wc -l | tr -d '[:space:]')
-  [ "$count" -eq 4 ] || { echo "$page: expected 4 profile SVGs, found $count" >&2; exit 1; }
+  [ "$count" -eq 5 ] || { echo "$page: expected 5 profile SVGs, found $count" >&2; exit 1; }
   grep -Fq 'aria-hidden="true" focusable="false"' "$page"
   ! grep -Eq '<span class="link-chip-icon"[^>]*>(@|GH|CV|P)</span>' "$page"
   grep -Fq '<a href="#contact"><svg class="link-chip-icon"' "$page"
+  grep -Fq 'href="https://scholar.google.com/citations?user=i6_1qZoAAAAJ&amp;hl=en"' "$page"
   grep -Fq 'href="https://github.com/landrarwolf"' "$page"
   grep -Fq 'href="/cv/"' "$page"
   grep -Fq 'href="#publications"' "$page"
   grep -Fq '<span>Email</span>' "$page"
+  grep -Fq '<span>Scholar</span>' "$page"
   grep -Fq '<span>GitHub</span>' "$page"
   grep -Fq '<span>CV</span>' "$page"
   grep -Fq '<span>Publications</span>' "$page"

@@ -9,4 +9,4 @@ The site is dependency-free static HTML/CSS. GitHub Actions publishes `index.htm
 
 ## Icon credits
 
-The profile-link icons are embedded from [Bootstrap Icons v1.13.1](https://github.com/twbs/icons/tree/v1.13.1) (envelope, file-earmark-person, and journal-text) and [GitHub Primer Octicons v19.18.0](https://github.com/primer/octicons/tree/v19.18.0) (mark-github-16). Both are MIT-licensed: [Bootstrap Icons license](https://github.com/twbs/icons/blob/v1.13.1/LICENSE) · [Primer Octicons license](https://github.com/primer/octicons/blob/v19.18.0/LICENSE).
+The profile-link icons are embedded from [Bootstrap Icons v1.13.1](https://github.com/twbs/icons/tree/v1.13.1) (envelope, mortarboard, file-earmark-person, and journal-text) and [GitHub Primer Octicons v19.18.0](https://github.com/primer/octicons/tree/v19.18.0) (mark-github-16). Both are MIT-licensed: [Bootstrap Icons license](https://github.com/twbs/icons/blob/v1.13.1/LICENSE) · [Primer Octicons license](https://github.com/primer/octicons/blob/v19.18.0/LICENSE).
